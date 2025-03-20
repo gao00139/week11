@@ -1,0 +1,59 @@
+body{
+    font-size: 16px;
+}
+.box{
+    padding: 20px;
+    margin: 10px;
+}
+.px-query{
+    background-color: cadetblue;
+    color: aliceblue;
+}
+.em-query{
+    background-color: brown;
+    color: aliceblue;
+}
+@media screen and (max-width: 600px){
+    .px-query{
+        display:none;
+    }
+}
+
+/* 600px/16px=37.5em */
+
+@media screen and (max-width: 37em){
+    .px-query{
+        display:none;
+    }
+}
+@media (prefers-color-scheme:dark){
+    body{
+        background-color: rgb(7, 7, 7);
+        color: aliceblue;
+    }
+}
+@media (hover:hover){
+    .hover-query::after{
+        content: "(Your device supports hove)";
+        color: green;
+    }
+}
+
+@media (hover:none){
+    .hover-query::after{
+        content: "(Your device not supports hove)";
+        color:red;
+    }
+}
+
+@media (orientation: portrait){
+    .orientation::after{
+        content: "Portrait Mode";
+    }
+}
+
+@media (orientation: landscape){
+    .orientation::after{
+        content: "Landscape Mode";
+    }
+}
